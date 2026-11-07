@@ -35,6 +35,6 @@ Installed copies check this repository for new versions, verify them with the pu
 
 ## Support
 
-Bugs and feature requests are welcome on the [issue tracker](https://github.com/panelithapp/panelith/issues). Report security problems privately as described in the [security policy](https://github.com/panelithapp/panelith/security/advisories/new).
+Email **bharry29@gmail.com** with "Panelith" in the subject for bugs, questions, or security problems. Include the version and, for bugs, a log file from `%APPDATA%\Panelith\logs`.
 
 Copyright (c) 2026 Bharath Vadlamannati.
