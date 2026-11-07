@@ -1,0 +1,104 @@
+Panelith
+Copyright (c) 2026 Bharath Vadlamannati
+
+Panelith is licensed under the PolyForm Noncommercial License 1.0.0 (see
+LICENSE). It is free for noncommercial use; commercial use needs a separate
+license from the copyright holder.
+
+Versions published before 0.1.0 were released under the Apache License,
+Version 2.0, and copies obtained under those terms keep them.
+
+================================================================================
+Protocol provenance and clean-room statement
+================================================================================
+
+Panelith talks to USB display panels from several vendors. None of these
+vendors publish a protocol specification for the panels in question, with the
+exception of BeadaPanel, which publishes an SDK.
+
+The device protocol implementations in `src/Panelith.Devices` were written
+from protocol *descriptions* -- byte layouts, command opcodes, handshake
+sequences and pixel encodings -- that have been published by the hardware
+reverse-engineering community. No source code was copied from any of the
+projects listed below, several of which are GPL-licensed and therefore
+incompatible with this project's license. Protocol facts (which byte
+means what) are not themselves copyrightable; the expression of those facts in
+this repository is original.
+
+Projects whose published protocol documentation informed this implementation,
+with thanks:
+
+  * thermalright-lcd-control (Apache-2.0)
+    https://github.com/rejeb/thermalright-lcd-control
+    Documented the Thermalright/TRCC wire families: `ly` bulk, raw `bulk`,
+    HID type 2 and type 3, SCSI/BOT, and the PM/SUB/FBL screen-identification
+    tables used by the TRCC firmware.
+
+  * turing-smart-screen-python (GPL-3.0)
+    https://github.com/mathoudebine/turing-smart-screen-python
+    Documented the Turing Smart Screen revision A/B/C/D serial command sets,
+    the XuanFang variants, and the newer Turing USB bulk protocol.
+
+  * InfoPanel (GPL-3.0)
+    https://github.com/habibrehmansg/infopanel
+    Documented panel behaviour, performance characteristics and the practical
+    failure modes of these devices (see its PANELS.md).
+
+  * liquidctl (GPL-3.0)
+    https://github.com/liquidctl/liquidctl
+    Documented all-in-one cooler LCD protocols.
+
+Panelith is not affiliated with, endorsed by, or supported by Thermalright,
+Turing, BeadaPanel, XuanFang, Kipye, WeAct Studio, or any other hardware
+vendor. All trademarks are the property of their respective owners. Vendor and
+model names appear in this project solely to identify hardware compatibility.
+
+================================================================================
+Bundled font
+================================================================================
+
+Themes default to Inter, which is included in this repository under the SIL
+Open Font License, Version 1.1. The font files and the license text are in
+src/Panelith.Rendering/Fonts/. Copyright (c) 2016 The Inter Project Authors
+(https://github.com/rsms/inter).
+
+================================================================================
+Bundled libusb
+================================================================================
+
+Windows builds include libusb 1.0.30 (src/Panelith.Devices/Native/win-x64/
+libusb-1.0.dll), unmodified from the official release at
+https://github.com/libusb/libusb/releases. libusb is licensed under the GNU
+Lesser General Public License, version 2.1, and is loaded dynamically; you may
+replace the DLL with your own build. Source: https://github.com/libusb/libusb.
+
+================================================================================
+Bundled programs
+================================================================================
+
+Windows builds include these programs, unmodified from their official releases
+and run as separate processes. build/fetch-tools.ps1 pins each version and
+checks it against the SHA-256 its project published.
+
+  * yt-dlp (The Unlicense), downloads YouTube videos for video screens.
+    https://github.com/yt-dlp/yt-dlp
+    Users are responsible for only downloading videos they have the right to
+    use; Panelith shows this notice before the first download.
+
+  * QuickJS-ng (MIT), the JavaScript runtime yt-dlp needs for YouTube.
+    Copyright (c) 2017-2024 Fabrice Bellard, Charlie Gordon, and the
+    QuickJS-ng contributors. https://github.com/quickjs-ng/quickjs
+
+  * PawnIO setup (GNU General Public License, version 2), the signed
+    hardware-access driver LibreHardwareMonitor reads CPU sensors through.
+    Installed only when the user ticks it in the installer or presses
+    "Install PawnIO". Source: https://github.com/namazso/PawnIO
+
+Video decoding uses Windows Media Foundation, part of Windows, through
+Vortice.MediaFoundation (MIT).
+
+================================================================================
+Third-party dependencies
+================================================================================
+
+See docs/third-party-licenses.md for the full dependency license inventory.
