@@ -32,6 +32,7 @@ Installed copies check this repository for new versions, verify them with the pu
 | `LICENSE` | Panelith's license, PolyForm Noncommercial 1.0.0. Commercial use needs a separate license. |
 | `NOTICE` | Copyright and attribution notice. |
 | `THIRD-PARTY-LICENSES.md` | Every component Panelith ships, its license, and where its source is. |
+| `PRIVACY.md` | What Panelith sends over the network, and when. |
 
 ## Support
 
